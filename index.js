@@ -42,7 +42,8 @@ var AudioRecorder = {
       MeasurementMode: false,
       AudioEncodingBitRate: 32000,
       IncludeBase64: false,
-      AudioSource: 0
+      AudioSource: 0,
+      ResumeOnInterruptionEnd: true
     };
 
     var recordingOptions = {...defaultOptions, ...options};
@@ -56,7 +57,8 @@ var AudioRecorder = {
         recordingOptions.AudioEncoding,
         recordingOptions.MeteringEnabled,
         recordingOptions.MeasurementMode,
-        recordingOptions.IncludeBase64
+        recordingOptions.IncludeBase64,
+        recordingOptions.ResumeOnInterruptionEnd
       );
     } else {
       return AudioRecorderManager.prepareRecordingAtPath(path, recordingOptions);
